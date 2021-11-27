@@ -2,8 +2,8 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>tkt</groupId>
-    <artifactId>Part02_33.StarSign</artifactId>
-    <name>Part02_33.StarSign</name>
+    <artifactId>Part02_24.FromParameterToOne</artifactId>
+    <name>Part02_24.FromParameterToOne</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     
