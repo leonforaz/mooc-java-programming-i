@@ -1,0 +1,14 @@
+
+import java.util.Scanner;
+
+public class SpeedingTicket {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+    
+        System.out.println("Give Speed:");
+        int x = Integer.valueOf(scanner.nextLine());
+        if ( x > 120) {
+        System.out.println("Speeding ticket!");} 
+    }
+}
