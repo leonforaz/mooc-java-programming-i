@@ -9,6 +9,10 @@ public class Hold {
 
     //need a maximumWeight in the constructor to make this
     //make sure the ArrayList of object(Suitcase) is written properly
+    public Hold() {
+        this.maximumWeight = maximumWeight;
+        this.suitcases = new ArrayList<Suitcase>();
+    }
     public Hold(int maximumWeight) {
         this.maximumWeight = maximumWeight;
         this.suitcases = new ArrayList<Suitcase>();
@@ -31,6 +35,7 @@ public class Hold {
     //each suitcase in a hold
     public void printItems() {
         for (Suitcase suitcase : this.suitcases) {
+            //use the method from the object's class
             suitcase.printItems();
         }
     }
