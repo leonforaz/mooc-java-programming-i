@@ -15,34 +15,29 @@ public class GradeRegister {
     
     public double averageOfPoints() {
         int sum = 0;
-        int xCount = 0;
         
         if (this.points.isEmpty()) {
             return -1;
         } else {
-            for (Integer grade : this.points) {
-                sum = sum + grade;
-                xCount++;
+            for (Integer points : this.points) {
+                sum = sum + points;
             }
         }
-        return 1.0 * sum/xCount;
-        //mooc.fi return 1.0 * sum / this.points.size();
+        return 1.0 * sum / this.points.size();
+        
     }
 
     public double averageOfGrades() {
         int sum = 0;
-        int xCount = 0;
-
+        
         if (this.grades.isEmpty()) {
-            return -1;
+            return - 1;
         } else {
-            for (Integer grade : this.grades) {
-                sum = sum + grade;
-                xCount++;
+            for (Integer grades : this.grades) {
+                sum = sum + grades;
             }
         }
-        return 1.0 * sum / xCount;
-        //mooc.fi return 1.0 * sum / this.grades.size();
+        return 1.0 * sum / this.grades.size();
     }
 
     public void addGradeBasedOnPoints(int points) {
