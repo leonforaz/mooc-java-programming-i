@@ -26,8 +26,9 @@ public class MainProgram {
     public static int indexOfSmallest(int[] array) {
         int smallest = array[0];
         int index = 0;
+        
         for (int i = 1; i < array.length; i++) {
-            if (array[i] < smallest) {
+            if (array[i] > smallest) {
                 index = i;
                 smallest = array[i];
             }
@@ -62,10 +63,8 @@ public class MainProgram {
         //swap(array, int index1, int index2)
         //prints contents before and after sorting (this checks if it's working)
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array);
             int indexOfSmallest = indexOfSmallestFrom(array, i);
             swap(array, indexOfSmallest, i);
-            System.out.println(array);
         }
 
     }

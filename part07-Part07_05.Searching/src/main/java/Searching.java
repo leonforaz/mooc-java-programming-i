@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Collections;
 
 public class Searching {
 
@@ -44,11 +45,52 @@ public class Searching {
     }
 
     public static int linearSearch(ArrayList<Book> books, int searchedId) {
+        
+        for (Book book : books) {
+            if(book.getId() == searchedId) {
+                return books.indexOf(book);
+            }
+        }
         return -1;
     }
 
     public static int binarySearch(ArrayList<Book> books, long searchedId) {
+        int begin = 0;
+        int end = books.size() -1;
+        int middle = 0;
+        
+        while(begin <= end) {
+            middle = ((begin + end) / 2);
+            
+            Book book = books.get(middle);
+            int bookId = book.getId();
+
+            //mooc.fi solution is superior
+            //intbookId = books.get(middle).getId();
+            //You forgot about .get method for ArrayList
+            //Since middle is a Book, use the .getId() methhod from the Book class
+            
+            if(bookId == searchedId) {
+                return middle;
+            } else if (bookId < searchedId) {
+                begin = (middle +1);
+            } else {
+//            } else if (bookId > searchedId) {
+                end = (middle - 1);
+            }
+        }
+        
         return -1;
     }
 }
+
+//Binary search didn't find a book in list contaiting one book, 
+//even though the book was on the list. 
+//Try testing binary search with the following book:
+//[(id: 422341; name: name 422341)]
+
+//The method must be implemented as a binary search, which assumes the list is ordered. 
+//You should also assume, that the ids towards the beginning of the list, 
+//are always smaller than the ids towards the end of the list.
+
 
