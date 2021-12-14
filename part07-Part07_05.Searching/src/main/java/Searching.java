@@ -66,7 +66,7 @@ public class Searching {
             int bookId = book.getId();
 
             //mooc.fi solution is superior
-            //intbookId = books.get(middle).getId();
+            //int bookId = books.get(middle).getId();
             //You forgot about .get method for ArrayList
             //Since middle is a Book, use the .getId() methhod from the Book class
             
