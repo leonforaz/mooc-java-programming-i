@@ -1,5 +1,6 @@
 
-import java.io.File;
+//Not necessary for the assignment. mooc gave this 
+//import java.io.File;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -60,34 +61,26 @@ public class RecipeSearch {
 
     public static ArrayList<Recipe> readRecipesFromFile(String file) {
         ArrayList<Recipe> recipes = new ArrayList<>();
-
-        try ( Scanner fileScanner = new Scanner(Paths.get(file))) {
-            while (fileScanner.hasNextLine()) {
+        
+        try(Scanner fileScanner = new Scanner(Paths.get(file))){
+            while(fileScanner.hasNextLine()){
                 String recipeName = fileScanner.nextLine();
                 int cookingTime = Integer.valueOf(fileScanner.nextLine());
                 Recipe recipe = new Recipe(recipeName, cookingTime);
-
+                
                 recipes.add(recipe);
-
-                while (fileScanner.hasNextLine()) {
-                    String ingredient = fileScanner.nextLine();
-                    if (ingredient.isEmpty()) {
-                        break;
-                    }
-                    recipe.addIngredient(ingredient);
+                
+                while(fileScanner.hasNextLine()){
+                String ingredient = fileScanner.nextLine();
+                if(ingredient.isEmpty()){
+                    break;
                 }
+                recipe.addIngredient(ingredient);
             }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
-        return recipes;
-    }
-
+    } catch (Exception e){
+            System.out.println(e.getMessage());
 }
-//csv is comma seperated value
-
-//irst create the functionality to read and list recipes. 
-//The user interface of the program is described below. 
-//You may assume that the user only enters files that exist. 
-//Below we assume that the example recipes given earlier in 
-//the exercise description are stored in the file recipes.txt.
+return recipes;
+}
+}
